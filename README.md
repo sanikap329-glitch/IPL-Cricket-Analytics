@@ -375,7 +375,7 @@ It combines cricket domain understanding, Python-based data analysis, statistica
 
 - GitHub: [sanikap329-glitch](https://github.com/sanikap329-glitch)
 - LinkedIn: [Sanika Pawar]([https://www.linkedin.com/in/sanika-pawar-683b5532b/]
-
+-Dashboard http://localhost:8501/
 ---
 
 *Beyond the scoreboard — understanding the game, one delivery at a time.* 🏏
