@@ -1,0 +1,22 @@
+# Raw IPL datasets
+Data/ipl_male_csv/
+Data/ipl_male_csv.zip
+Data/outputs/ipl_all_matches_with_metadata.csv
+
+# Jupyter temporary files
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Python temporary files
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Environment and secrets
+.env
+.env.*
+
+# System files
+.DS_Store
+Thumbs.db
