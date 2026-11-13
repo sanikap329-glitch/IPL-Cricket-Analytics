@@ -1,0 +1,61 @@
+season,batting_team,match_phase,season_total_runs,phase_runs,innings_batted,fours,sixes,boundary_runs,singles,doubles,wickets_lost,legal_balls,phase_run_rate,season_run_rate
+2024,"Sunrisers Hyderabad",Powerplay,3052,1073,16,113,59,806,158,28,29,576,11.18,10.04
+2024,"Sunrisers Hyderabad","Middle Overs",3052,1245,16,64,72,688,386,57,43,832,8.98,10.04
+2024,"Sunrisers Hyderabad","Death Overs",3052,734,15,40,47,442,164,40,33,415,10.61,10.04
+2024,"Royal Challengers Bengaluru",Powerplay,2930,876,15,99,42,648,150,23,21,540,9.73,10.15
+2024,"Royal Challengers Bengaluru","Middle Overs",2930,1238,15,69,68,684,373,59,40,802,9.26,10.15
+2024,"Royal Challengers Bengaluru","Death Overs",2930,816,14,61,55,574,135,26,38,390,12.55,10.15
+2024,"Kolkata Knight Riders",Powerplay,2667,930,14,108,45,702,100,22,21,504,11.07,10.71
+2024,"Kolkata Knight Riders","Middle Overs",2667,1175,14,91,58,712,303,48,28,721,9.78,10.71
+2024,"Kolkata Knight Riders","Death Overs",2667,562,12,39,38,384,96,19,27,269,12.54,10.71
+2024,"Rajasthan Royals",Powerplay,2647,773,15,109,19,550,142,21,19,540,8.59,9.09
+2024,"Rajasthan Royals","Middle Overs",2647,1155,15,74,51,602,396,50,34,810,8.56,9.09
+2024,"Rajasthan Royals","Death Overs",2647,719,15,53,42,464,142,39,28,397,10.87,9.09
+2024,"Delhi Capitals",Powerplay,2573,897,14,109,46,712,104,15,28,504,10.68,9.80
+2024,"Delhi Capitals","Middle Overs",2573,1035,14,75,50,600,318,38,37,719,8.64,9.80
+2024,"Delhi Capitals","Death Overs",2573,641,13,45,39,414,134,30,29,353,10.90,9.80
+2024,"Mumbai Indians",Powerplay,2568,789,14,83,38,560,122,20,25,504,9.39,9.59
+2024,"Mumbai Indians","Middle Overs",2568,1131,14,95,51,686,312,50,35,756,8.98,9.59
+2024,"Mumbai Indians","Death Overs",2568,648,14,37,44,412,132,23,36,346,11.24,9.59
+2024,"Chennai Super Kings",Powerplay,2524,733,14,91,18,472,165,26,19,504,8.73,9.19
+2024,"Chennai Super Kings","Middle Overs",2524,1049,14,68,41,518,368,59,34,756,8.33,9.19
+2024,"Chennai Super Kings","Death Overs",2524,742,14,50,48,488,151,29,24,388,11.47,9.19
+2024,"Punjab Kings",Powerplay,2487,743,14,102,21,534,136,23,23,504,8.85,9.19
+2024,"Punjab Kings","Middle Overs",2487,1071,14,68,58,620,328,44,41,756,8.50,9.19
+2024,"Punjab Kings","Death Overs",2487,673,14,43,41,418,142,30,28,364,11.09,9.19
+2024,"Lucknow Super Giants",Powerplay,2483,695,14,77,26,464,141,22,26,504,8.27,9.06
+2024,"Lucknow Super Giants","Middle Overs",2483,1120,14,73,47,574,387,54,34,756,8.89,9.06
+2024,"Lucknow Super Giants","Death Overs",2483,668,14,56,29,398,133,45,24,384,10.44,9.06
+2024,"Gujarat Titans",Powerplay,2040,556,12,59,16,332,144,25,16,432,7.72,8.71
+2024,"Gujarat Titans","Middle Overs",2040,903,12,69,28,444,309,54,33,648,8.36,8.71
+2024,"Gujarat Titans","Death Overs",2040,581,12,55,24,364,121,28,30,325,10.73,8.71
+2025,"Punjab Kings",Powerplay,3262,1075,18,119,50,776,174,39,32,648,9.95,10.02
+2025,"Punjab Kings","Middle Overs",3262,1419,18,98,76,848,408,50,44,921,9.24,10.02
+2025,"Punjab Kings","Death Overs",3262,768,15,50,53,518,155,27,27,384,12.00,10.02
+2025,"Mumbai Indians",Powerplay,2912,935,16,99,46,672,161,32,20,576,9.74,9.63
+2025,"Mumbai Indians","Middle Overs",2912,1261,16,105,54,744,382,41,37,851,8.89,9.63
+2025,"Mumbai Indians","Death Overs",2912,716,15,56,43,482,142,32,29,387,11.10,9.63
+2025,"Gujarat Titans",Powerplay,2892,830,15,93,28,540,186,34,12,540,9.22,9.96
+2025,"Gujarat Titans","Middle Overs",2892,1354,15,117,54,792,387,60,24,810,10.03,9.96
+2025,"Gujarat Titans","Death Overs",2892,708,15,46,42,436,162,32,42,392,10.84,9.96
+2025,"Lucknow Super Giants",Powerplay,2732,783,14,75,41,546,142,23,14,504,9.32,9.91
+2025,"Lucknow Super Giants","Middle Overs",2732,1251,14,94,68,784,320,42,30,756,9.93,9.91
+2025,"Lucknow Super Giants","Death Overs",2732,698,14,49,43,454,157,22,38,394,10.63,9.91
+2025,"Royal Challengers Bengaluru",Powerplay,2653,882,15,106,33,622,156,27,18,540,9.80,9.69
+2025,"Royal Challengers Bengaluru","Middle Overs",2653,1145,15,86,50,644,369,49,34,774,8.88,9.69
+2025,"Royal Challengers Bengaluru","Death Overs",2653,626,13,47,42,440,112,19,30,328,11.45,9.69
+2025,"Rajasthan Royals",Powerplay,2614,925,15,100,57,742,116,14,21,509,10.90,9.71
+2025,"Rajasthan Royals","Middle Overs",2614,1091,14,73,55,622,349,40,40,756,8.66,9.71
+2025,"Rajasthan Royals","Death Overs",2614,598,14,38,34,356,145,31,33,351,10.22,9.71
+2025,"Sunrisers Hyderabad",Powerplay,2519,761,13,95,26,536,119,24,22,468,9.76,10.04
+2025,"Sunrisers Hyderabad","Middle Overs",2519,1145,13,81,60,684,325,35,31,702,9.79,10.04
+2025,"Sunrisers Hyderabad","Death Overs",2519,613,13,43,34,376,134,37,30,335,10.98,10.04
+2025,"Delhi Capitals",Powerplay,2500,749,15,90,25,510,155,23,27,508,8.85,9.31
+2025,"Delhi Capitals","Middle Overs",2500,1103,14,76,52,616,381,38,32,756,8.75,9.31
+2025,"Delhi Capitals","Death Overs",2500,648,14,55,33,418,149,24,29,348,11.17,9.31
+2025,"Chennai Super Kings",Powerplay,2441,731,14,95,19,494,136,27,29,504,8.70,8.80
+2025,"Chennai Super Kings","Middle Overs",2441,1032,14,66,42,516,357,59,36,756,8.19,8.80
+2025,"Chennai Super Kings","Death Overs",2441,678,14,38,41,398,177,28,30,405,10.04,8.80
+2025,"Kolkata Knight Riders",Powerplay,2002,723,13,73,43,550,103,12,18,438,9.90,9.15
+2025,"Kolkata Knight Riders","Middle Overs",2002,793,12,55,29,394,269,40,40,619,7.69,9.15
+2025,"Kolkata Knight Riders","Death Overs",2002,486,11,45,29,354,81,10,24,256,11.39,9.15
