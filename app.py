@@ -151,9 +151,9 @@ def download_from_google_drive(filename):
     file_path = DATA_DIR / filename
 
     # Reuse an already downloaded, non-empty file
-    if file_path.exists() and file_path.stat().st_size > 0:
-        return file_path
-
+    if file_path.exists():
+      file_path.unlink()
+    
     file_id = GOOGLE_DRIVE_FILES.get(filename)
 
     if not file_id:
