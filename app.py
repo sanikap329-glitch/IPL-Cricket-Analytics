@@ -142,6 +142,7 @@ GOOGLE_DRIVE_FILES = {
 }
 
 
+
 # ============================================================
 # 4. DOWNLOAD AND LOAD DATASETS
 # ============================================================
@@ -149,26 +150,31 @@ GOOGLE_DRIVE_FILES = {
 def download_from_google_drive(filename):
 
     file_path = DATA_DIR / filename
-
-    # Reuse an already downloaded, non-empty file
-    if file_path.exists():
-      file_path.unlink()
-    
     file_id = GOOGLE_DRIVE_FILES.get(filename)
 
+    # Check whether Google Drive ID is configured
     if not file_id:
         raise FileNotFoundError(
             f"Google Drive ID is not configured for {filename}"
         )
 
     try:
-        downloaded_file = gdown.download(
-            id=file_id,
-            output=str(file_path),
-            quiet=False,
-            fuzzy=True
-        )
+        # Remove old downloaded file to force fresh download
+        if file_path.exists():
+            file_path.unlink()
 
+        # Google Drive download URL
+        url = f"https://drive.google.com/uc?id={file_id}"
+
+        with st.spinner(f"Downloading {filename} from Google Drive..."):
+
+            downloaded_file = gdown.download(
+                url,
+                str(file_path),
+                quiet=False
+            )
+
+        # Verify download
         if (
             downloaded_file is None
             or not file_path.exists()
@@ -178,11 +184,39 @@ def download_from_google_drive(filename):
                 f"Google Drive download failed for {filename}"
             )
 
+        # ====================================================
+        # VALIDATE BOWLER RANKING FILE
+        # ====================================================
+
+        if filename == "all_bowler_pressure_rankings.csv":
+
+            required_columns = {
+                "reliability_adjusted_score",
+                "final_rank",
+                "sample_reliability"
+            }
+
+            downloaded_columns = set(
+                pd.read_csv(file_path, nrows=0).columns
+            )
+
+            missing_columns = (
+                required_columns - downloaded_columns
+            )
+
+            if missing_columns:
+                file_path.unlink()
+
+                raise ValueError(
+                    "Incorrect bowler ranking file. "
+                    f"Missing required columns: {missing_columns}"
+                )
+
         return file_path
 
     except Exception as error:
 
-        if file_path.exists() and file_path.stat().st_size == 0:
+        if file_path.exists():
             file_path.unlink()
 
         raise RuntimeError(
@@ -190,23 +224,39 @@ def download_from_google_drive(filename):
         )
 
 
+# ============================================================
+# LOAD CSV WITH STREAMLIT CACHING
+# ============================================================
+
 @st.cache_data(show_spinner=False)
 def load_csv(file_path, modified_time):
 
     path = Path(file_path)
 
     try:
-        return pd.read_csv(path, low_memory=False)
+        df = pd.read_csv(
+            path,
+            low_memory=False
+        )
+
+        return df
 
     except Exception as error:
-        return {"_load_error": str(error)}
 
+        return {
+            "_load_error": str(error)
+        }
+
+
+# ============================================================
+# LOAD DATASET FUNCTION
+# ============================================================
 
 def load_data(filename):
 
     try:
-        with st.spinner(f"Loading {filename}..."):
-            path = download_from_google_drive(filename)
+
+        path = download_from_google_drive(filename)
 
         return load_csv(
             str(path),
@@ -214,24 +264,39 @@ def load_data(filename):
         )
 
     except Exception as error:
-        return {"_load_error": str(error)}
+
+        return {
+            "_load_error": str(error)
+        }
 
 
 # ============================================================
 # LOAD ALL REQUIRED DATASETS
 # ============================================================
 
-delivery_pressure = load_data("delivery_leverage_pressure.csv")
+delivery_pressure = load_data(
+    "delivery_leverage_pressure.csv"
+)
 
-match_pressure = load_data("match_pressure_index.csv")
+match_pressure = load_data(
+    "match_pressure_index.csv"
+)
 
-player_ranking = load_data("final_player_pressure_ranking.csv")
+player_ranking = load_data(
+    "final_player_pressure_ranking.csv"
+)
 
-player_value = load_data("player_value_under_pressure.csv")
+player_value = load_data(
+    "player_value_under_pressure.csv"
+)
 
-bowler_ranking = load_data("all_bowler_pressure_rankings.csv")
+bowler_ranking = load_data(
+    "all_bowler_pressure_rankings.csv"
+)
 
-model_metrics = load_data("win_probability_model_metrics.csv")
+model_metrics = load_data(
+    "win_probability_model_metrics.csv"
+)
 
 
 # ============================================================
@@ -239,13 +304,59 @@ model_metrics = load_data("win_probability_model_metrics.csv")
 # ============================================================
 
 datasets = {
+
     "delivery_pressure": delivery_pressure,
+
     "match_pressure": match_pressure,
+
     "player_ranking": player_ranking,
+
     "player_value": player_value,
+
     "bowler_ranking": bowler_ranking,
+
     "model_metrics": model_metrics
+
 }
+
+
+# ============================================================
+# BOWLER RANKING VALIDATION
+# ============================================================
+
+if isinstance(bowler_ranking, pd.DataFrame):
+
+    required_bowler_columns = [
+        "reliability_adjusted_score",
+        "final_rank",
+        "sample_reliability"
+    ]
+
+    missing_columns = [
+        col for col in required_bowler_columns
+        if col not in bowler_ranking.columns
+    ]
+
+    if missing_columns:
+
+        st.error(
+            "Bowler ranking file is missing required columns: "
+            + ", ".join(missing_columns)
+        )
+
+    else:
+
+        st.success(
+            f"Bowler ranking loaded successfully: "
+            f"{len(bowler_ranking)} bowlers."
+        )
+
+elif isinstance(bowler_ranking, dict):
+
+    st.error(
+        "Bowler ranking could not be loaded: "
+        + bowler_ranking.get("_load_error", "Unknown error")
+    )
 
 
 # ============================================================
